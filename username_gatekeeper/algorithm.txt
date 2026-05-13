@@ -1,14 +1,5 @@
 1. Get username
-2. Check if the username is more than or equal 5, and less than or equal 15
-    if true:
-    2.1. Then, check if the username doesn't contain any special characters
-        if true:
-        2.1.1. Then, check if the username doesn't equal 'admin'
-            if true:
-            2.1.1.1. return True
-            if false:
-            2.1.1.2. return false
-        if false:
-        2.1.2. return False
-    if false:
-    2.2. return False
+2. Check if the username is:
+    - More than or equal 5, and less than or equal 15
+    - Doesn't contain any special characters
+    - Doesn't equal 'admin', whether in uppercase or lowercase
