@@ -5,7 +5,7 @@ def validate_username(username):
     pattern = r"^[a-zA-Z0-9]{5,15}$"
     # Forbidden word
     forbidden = "admin"
-    if (re.match(pattern, username)and username != forbidden):
+    if (re.match(pattern, username)and username.lower() != forbidden):
         return True
     
     return False
@@ -18,3 +18,4 @@ print("hello, world: ", validate_username("hello, world")) # False
 print("user0123: ", validate_username("user0123")) # True
 print("_user: ", validate_username("_user")) # False
 print("user0123456user: ", validate_username("user0123456user")) # True
+print("AdMiN: ", validate_username("AdMiN")) # False
