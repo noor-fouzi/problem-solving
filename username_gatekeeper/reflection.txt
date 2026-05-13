@@ -1,0 +1,7 @@
+Today, I learned how to use regular expressions to validate user input.
+In regular expressions, '^' and '$' are called anchors. They are used to specify that
+the string should start and end with a character within the provided characters class.
+
+Today's exercise took 1 hour and 50 minutes. Some time was wasted downloading and installing
+necessary files and libraries.
+This made me realize the importance of checking and preparing in advance.
