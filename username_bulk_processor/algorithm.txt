@@ -1,0 +1,20 @@
+1. Get a list of usernames
+2. Initiate a variable to store the valid usernames number - valid_usernames_count
+3. Initiate a variable to store the invaild usernames number - invalid_usernames_count
+4. Initiate an empty list to store the invalid usernames - invalid_usernames
+5. Iterate the usernames list if it's not empty:
+    5.1. Check if each username is:
+        . Between 5 and 15 characters
+        . Contains letters, numbers and spaces only
+        . Does not equal 'admin' - in any case!
+    5.2. If a username is valid:
+        5.2.1. valid_usernames_count will be increased by 1
+    5.3. If a username is invalid:
+        5.3.1. invalid_usernames_count will be increated by 1
+        5.3.2. The username will be added to the invalid_usernames list
+6. If the usernames is empty:
+    6.1.return an error message
+7. Initiate an empty dictionary - using the dict constructor in python
+    7.1. Add the number of valid usernames as "successful_count"
+    7.2. Add the number of invalid usernames as "failed_count
+    7.3. Add the list of invalid usernames as "rejected_usernames"
