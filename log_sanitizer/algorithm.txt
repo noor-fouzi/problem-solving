@@ -1,0 +1,17 @@
+Log Sanitizer
+
+1. Get a log of login attempts as a list of raw strings - format: "timestamp | username | statuscode"
+2. Initiate an ampty list to store the secure attempts - secure_attempts
+3. Initiate an empty list to store the failed attempts - failed_attempts
+4. Loop the list of logs
+    4.1. If the line is well-formatted:
+        4.1.1. Split each log into timestamp, username and status code
+        4.1.2. If statuscode is 200:
+                4.1.2.1. Add the username to the secure attempts list
+        4.1.3. If status code is 403 or other:
+                4.1.3.1. Add the username to the failed attempts list
+    4.2. If line is badly-formatted:
+        4.2.1. Skip
+5. Initiate an empty dictionary
+    5.1. Add the list of secure attempts list as "secure_events"
+    5.2. Add the failed attempts list "flagged_attempts"
