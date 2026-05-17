@@ -8,10 +8,11 @@ def split_string(string, split_char = ' '):
             holder = ""
         else:
             holder += string[character]
-            print(holder)
 
     splited_string.append(holder)
     return splited_string
 
-
-print(split_string("hello", " "))
+if __name__ == "__main__":
+    print(split_string("hello", " "))
+    print(split_string("timestamp | username | statuscode", "|"))
+    print(split_string("You&Me", "&"))
