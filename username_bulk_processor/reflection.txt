@@ -27,3 +27,6 @@ Here are some:
     To delete unstaged changes that are no longer needed
     
 And many more!
+
+Lastly, learning how the programming language handles different data types
+is immensly important!
