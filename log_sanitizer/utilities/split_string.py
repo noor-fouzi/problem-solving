@@ -6,12 +6,12 @@ def split_string(string, split_char = ' '):
     for character in range (len(string)):
 
         if string[character] == split_char or  character == len(string):
-            splited_string.append(clear_spaces(holder))
+            splited_string.append(holder)
             holder = ""
         else:
             holder += string[character]
 
-    splited_string.append(clear_spaces(holder))
+    splited_string.append(holder)
     return splited_string
 
 if __name__ == "__main__":
