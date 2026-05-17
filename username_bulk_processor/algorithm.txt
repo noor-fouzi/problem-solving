@@ -4,7 +4,7 @@
 4. Iterate the usernames list:
     4.1. Check if each username is:
         . Between 5 and 15 characters
-        . Contains letters, numbers and spaces only
+        . Contains letters and numbers only
         . Does not equal 'admin' - in any case!
     4.2. If a username is valid:
         4.2.1. valid_usernames_count will be increased by 1
