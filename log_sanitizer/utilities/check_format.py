@@ -5,7 +5,7 @@ import re
 def is_well_formatted(string):
     splited = split_string(clear_spaces(string), "|")
     if len(splited) == 3:
-        if re.match(r"^[0-5]{3}$", splited[2]):
+        if re.match(r"^[0-9]{3}$", splited[2]):
             return True
     
     return False
