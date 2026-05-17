@@ -36,4 +36,27 @@ def process_signups(usernames_list):
         rejected_usernames =  invalid_usernames
     )
 
-print(process_signups(['admin', '01010user', 'user']))
+if __name__ == "__main__":
+    print(process_signups([])) 
+    # >> We can't process an empty list!
+
+    print(process_signups(["AdMiN", "User", "Username", "user_name"]))
+    # >> {
+    #       'successful_count': 1,
+    #       'failed_count' : 3,
+    #       'invalid_usernames': ['AdMiN', 'User', 'user_name']
+    # }
+
+    print(process_signups(["010101", "USERNAME", "ohayohelloworld"]))
+    # >> {
+    #       'successful_count': 3,
+    #       'failed_count' : 0,
+    #       'invalid_usernames': []
+    # }
+
+    print(process_signups(["helloworldIamhere", "user name", "1+1=2"]))
+    # >> {
+    #       'successful_count': 0,
+    #       'failed_count' : 3,
+    #       'invalid_usernames': ['helloworldIamhere', 'user name', '1+1=2']
+    # }
