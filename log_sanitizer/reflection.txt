@@ -1,0 +1,7 @@
+With this problem, I divided the solution into separated
+coding file.
+
+I did this for:
+. Ease of maintenance
+. Prevent code redundancy
+. Code re-use
