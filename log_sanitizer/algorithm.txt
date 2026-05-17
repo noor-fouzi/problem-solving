@@ -47,7 +47,7 @@ Split Function
     5.1. If current character is not split_char:
         5.1.1. Add the character to the holder
     5.2. If current character is split_char:
-        5.2.1. Add holder to the splited_string
+        5.2.1. Add holder to the splited_string after deleting additional spaces
         5.2.2. Empty the holder
 6. Add the holder to the list - it contains the last portion of 
    the splited string
