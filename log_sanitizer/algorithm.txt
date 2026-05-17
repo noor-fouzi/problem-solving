@@ -15,3 +15,24 @@ Log Sanitizer
 5. Initiate an empty dictionary
     5.1. Add the list of secure attempts list as "secure_events"
     5.2. Add the failed attempts list "flagged_attempts"
+
+Format Checker
+
+1. Get a string
+2. Split the string
+3. Check if the list:
+    . Contains 3 items
+    . the last item is a number
+
+Split Function
+
+1. Get a string 
+2. Specify the split character - split_char
+3. Initiate an empty list - splited_string
+4. Initiate an empty string - holder
+5. Loop the string
+    5.1. If current character is not split_char:
+        5.1.1. Add the character to the holder
+    5.2. If current character is split_char:
+        5.2.1. Add holder to the splited_string
+        5.2.2. Empty the holder
