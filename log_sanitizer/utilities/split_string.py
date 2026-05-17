@@ -11,7 +11,7 @@ def split_string(string, split_char = ' '):
         else:
             holder += string[character]
 
-    splited_string.append(holder)
+    splited_string.append(clear_spaces(holder))
     return splited_string
 
 if __name__ == "__main__":
