@@ -10,12 +10,12 @@ def validate_username(username):
     
     return False
 
-
-print("12345: ", validate_username("12345")) # True
-print("test.username: ", validate_username("test.username")) # False
-print("username: ", validate_username("username")) # True
-print("hello, world: ", validate_username("hello, world")) # False
-print("user0123: ", validate_username("user0123")) # True
-print("_user: ", validate_username("_user")) # False
-print("user0123456user: ", validate_username("user0123456user")) # True
-print("AdMiN: ", validate_username("AdMiN")) # False
+if __name__ == "__main__":
+    print("12345: ", validate_username("12345")) # True
+    print("test.username: ", validate_username("test.username")) # False
+    print("username: ", validate_username("username")) # True
+    print("hello, world: ", validate_username("hello, world")) # False
+    print("user0123: ", validate_username("user0123")) # True
+    print("_user: ", validate_username("_user")) # False
+    print("user0123456user: ", validate_username("user0123456user")) # True
+    print("AdMiN: ", validate_username("AdMiN")) # False
