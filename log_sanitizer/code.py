@@ -34,9 +34,11 @@ def filter_logs(login_logs):
 
         if is_well_formatted(log):
             splited = split_string(log, "|")
+            status_code = clear_spaces(splited[2])
+            username = clear_spaces(splited[1])
 
-            if clear_spaces(splited[2]) == "200":
-                username = clear_spaces(splited[1])
+            
+            if  status_code == "200":
                 if validate_username(username):
                     successful_attempts.append(username)
 
@@ -60,7 +62,8 @@ if __name__ == "__main__":
         "MALFORMED_LINE_ERR_909",
         "2026-05-17 05:03:22 | hacker_joe | 403",
         "2026-05-17 05:04:11 | validUser123 | 200",
-        "| | 200"
+        "| | 200",
+        "2026-05-17 05:03:22 | | 500"
     ]
 
     print(filter_logs(raw_logs))
