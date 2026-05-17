@@ -1,0 +1,29 @@
+Working on this problem teached me so many things!
+
+I started getting the hang of dictionaries in python - the most
+ intimidating topic for me.
+
+I learned a little about python import, and used the 'os' and 'sys' modules
+to control the import perimeter.
+
+Wanting to use the previously written username validation function, and 
+the issues regarding the python import, made me change the directoy tree alot!
+But, I tried to delete, unstage, undo and a lot of things using git bash.
+
+Here are some:
+
+. git log --oneline:
+    To get the directoy history of commits and their hash code in simplified
+    version
+
+. git reset --soft HEAD~<number>:
+    To move the head down a number of commits, without deleting the changes
+    made so far
+
+. git restore --staged <file>:
+    To unstage a staged file
+
+. git restore <file>:
+    To delete unstaged changes that are no longer needed
+    
+And many more!
