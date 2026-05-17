@@ -16,6 +16,7 @@ Log Sanitizer
     5.1. Add the list of secure attempts list as "secure_events"
     5.2. Add the failed attempts list "flagged_attempts"
 
+
 Format Checker
 
 1. Get a string
@@ -23,6 +24,18 @@ Format Checker
 3. Check if the list:
     . Contains 3 items
     . the last item is a number
+
+
+Space Cleaner
+ 
+. Get a string
+. initiate an empty string - clear
+. Loop the string:
+    . If current character is a space:
+        . Skip
+    . If it's not a space:
+        . Add it to clear
+
 
 Split Function
 
