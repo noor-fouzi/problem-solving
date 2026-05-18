@@ -1,0 +1,14 @@
+Mapper 
+
+. Get a list of profiles - list of dictionaries
+. Get a list of subscriptions - list of tuples
+. Initiate an empty dictionary to hold the mapped objects
+. Loop over the profiles list:
+
+
+Tuple to Dictionary
+1. Get a tuple
+2. Unpack it for easy access - user_id, billing_tier, is_active
+3. Initiate an dictionary with a key of user_id,
+    and its value is a dictionary that consists of the billing_tier as billing_tier
+    and is_active as is_active
