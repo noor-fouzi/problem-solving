@@ -10,8 +10,8 @@ def map_user_to_permissions(profiles, subscriptions):
     for profile in profiles:
         user_id = profile.get('user_id')
         user_subscription = lookup_dictionary.get(user_id)
-        
-        if user_subscription['is_active']:
+
+        if user_subscription and user_subscription['is_active']:
             mapped.update({
                 user_id: dict(
                     name = profile.get('name'),

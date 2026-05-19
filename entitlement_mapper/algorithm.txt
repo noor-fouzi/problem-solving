@@ -10,7 +10,7 @@ Mapper
 6. Loop over the profiles list:
     6.1. For each profile:
         6.1.1. Get the corresponding data from the look-up dictionary using the user_id
-            6.1.1.1. If the subscription is active - is_active is true:
+            6.1.1.1. If the subscription exists and is active - is_active is true:
                 6.1.1.1.1. Create a new dictionary, its key is the user's id,
                     and its value is a dictionary of:
                     name, billing tier, and type
