@@ -1,0 +1,12 @@
+I did it.
+At first, I was overwhelmed, and tried everything I could to run
+away from this problem.
+
+But, the only way I had was to start..
+And I did.
+
+After directly facing the problem, I could think of a solution.
+
+I learned a little about tuples; about unpacking a tuple by 
+assigning it to a number of variables, and taking positions into
+consideration.
