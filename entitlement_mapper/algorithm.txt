@@ -1,9 +1,19 @@
 Mapper 
 
-. Get a list of profiles - list of dictionaries
-. Get a list of subscriptions - list of tuples
-. Initiate an empty dictionary to hold the mapped objects
-. Loop over the profiles list:
+1. Get a list of profiles - a list of dictionaries
+2. Get a list of subscriptions - a list of tuples
+3. Initiate an empty dictionary to hold the mapped objects - mapped
+4. Initiate a list to hold our look-up dictionary - lookup_dictionary
+5. Loop over the subscriptions list:
+    5.1. Turn each tuple into a dictionary
+    5.2. Add the dictionary to the look-up dictionary
+6. Loop over the profiles list:
+    6.1. For each profile:
+        6.1.1. Get the corresponding data from the look-up dictionary using the user_id
+            6.1.1.1. If the subscription is active - is_active is true:
+                6.1.1.1.1. Create a new dictionary, its key is the user's id,
+                    and its value is a dictionary of:
+                    name, billing tier, and type
 
 
 Tuple to Dictionary
