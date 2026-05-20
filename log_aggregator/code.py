@@ -1,33 +1,20 @@
+from initiate_key import initiate_key
+
 def aggregate_logs(web_logs, mobile_logs):
     
     aggregator = {}
 
     for log in web_logs:
         user = log.get("user")
-        if user not in aggregator:
-            aggregator.update({
-                user : dict(
-                    web_sessions = [],
-                    mobile_devices = [],
-                    total_successful_logins = 0
-                )
-            })
+        initiate_key(user, aggregator)
 
-        
         aggregator[user]["web_sessions"].append(log.get("session_id"))
         if log.get("status") == "success":
             aggregator[user]["total_successful_logins"] += 1
 
     for log in mobile_logs:
         device, user, status_code = log
-        if user not in aggregator:
-            aggregator.update({
-                user: dict(
-                    web_sessions = [],
-                    mobile_devices = [],
-                    total_successful_logins = 0
-                )
-            })
+        initiate_key(user, aggregator)
 
         aggregator[user]["mobile_devices"].append(device)
         if status_code == 200:

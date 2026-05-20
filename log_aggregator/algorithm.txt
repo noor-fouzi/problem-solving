@@ -3,21 +3,24 @@
 . Loop over the web logs:
     . Get the user name associated with the current log
     . Check if the aggregated logs dictionary has an element with a key user name
-            . If the key doesn't exist:
-                . Initialize a dictionary with:
-                    . A key that is the user's name
-                    . A value that is a dictionary that contain the following:
-                        . An empty list to hold the web sessions - web_sessions
-                        . An empty list to hold the mobile devices - mobile_devices
-                        . A counter to track the number of successful attempts - total_successful_logins
-            . If the key exists:
-                . Add the web session id to the web sessions list
-                . Check if this login attempt was successful
-                    . If status is 'success':
-                        . Increment the successful attempts by 1
+        . If the key exists:
+            . Add the web session id to the web sessions list
+            . Check if this login attempt was successful
+                . If status is 'success':
+                    . Increment the successful attempts by 1
 . Loop over the mobile logs:
     . Unpack the tuple into: mobile device, name, and status code
     . Check if the aggregated logs disctionary has as element with a key user name
+        . If the key exists:
+            . Add the device id to the mobile devices list
+            . Check if this login attempt was successful
+                . If status code is 200:
+                    . Increment the successful attempts by 1
+
+
+Initiate Key
+
+. Get a key and a dictitonary
     . If the key doesn't exist:
         . Initialize a dictionary with:
             . A key that is the user's name
@@ -25,8 +28,3 @@
                 . An empty list to hold the web sessions - web_sessions
                 . An empty list to hold the mobile devices - mobile_devices
                 . A counter to track the number of successful attempts - total_successful_logins
-    . If the key exists:
-        . Add the device id to the mobile devices list
-        . Check if this login attempt was successful
-            . If status code is 200:
-                . Increment the successful attempts by 1
