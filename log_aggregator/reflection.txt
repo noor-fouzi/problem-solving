@@ -1,0 +1,6 @@
+I don't have much to say here..
+It was a challenge, but the AI explained it and broke it down well
+that it felt easy todo.
+
+The one thing I learned today is that you cannot use assigned operators on 
+function calls directly.
