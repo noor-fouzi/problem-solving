@@ -1,21 +1,19 @@
-. Get a list of web login logs and mobile login logs
-. Initiate an empty dictionary to hold the aggregated logs - aggregated_logs
-. Loop over the web logs:
-    . Get the user name associated with the current log
-    . Check if the aggregated logs dictionary has an element with a key user name
-        . If the key exists:
-            . Add the web session id to the web sessions list
-            . Check if this login attempt was successful
-                . If status is 'success':
-                    . Increment the successful attempts by 1
-. Loop over the mobile logs:
-    . Unpack the tuple into: mobile device, name, and status code
-    . Check if the aggregated logs disctionary has as element with a key user name
-        . If the key exists:
-            . Add the device id to the mobile devices list
-            . Check if this login attempt was successful
-                . If status code is 200:
-                    . Increment the successful attempts by 1
+1. Get a list of web login logs and mobile login logs
+2. Initiate an empty dictionary to hold the aggregated logs - aggregated_logs
+3. Loop over the web logs:
+    3.1. Get the user name associated with the current log
+    3.2. Check if the aggregated logs dictionary has an element with a key user name
+    3.3. Add the web session id to the web sessions list
+    3.4. Check if this login attempt was successful
+        3.4.1. If status is 'success':
+            3.4.1.1. Increment the successful attempts by 1
+4. Loop over the mobile logs:
+    4.1. Unpack the tuple into: mobile device, name, and status code
+    4.2. Check if the aggregated logs disctionary has as element with a key user name
+    4.3. Add the device id to the mobile devices list
+    4.4. Check if this login attempt was successful
+        4.4.1. If status code is 200:
+            4.4.1.1. Increment the successful attempts by 1
 
 
 Initiate Key
