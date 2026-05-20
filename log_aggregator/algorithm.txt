@@ -18,11 +18,11 @@
 
 Initiate Key
 
-. Get a key and a dictitonary
-    . If the key doesn't exist:
-        . Initialize a dictionary with:
-            . A key that is the user's name
-            . A value that is a dictionary that contain the following:
+1. Get a key and a dictitonary
+    2. If the key doesn't exist:
+        3. Initialize a dictionary with:
+            3.1. A key that is the user's name
+            3.2. A value that is a dictionary that contain the following:
                 . An empty list to hold the web sessions - web_sessions
                 . An empty list to hold the mobile devices - mobile_devices
                 . A counter to track the number of successful attempts - total_successful_logins
