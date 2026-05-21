@@ -5,5 +5,5 @@ Inventory Reconciliation Engine
 
 SKU Validator
 
-. Get an SKU number
-. Compate it with the regular expression : r"^SKU-[0-9]*$"
+1. Get an SKU number
+2. Compate it with the regular expression : r"^SKU-[0-9]*$"
