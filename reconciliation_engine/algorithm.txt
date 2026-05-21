@@ -1,0 +1,9 @@
+Inventory Reconciliation Engine
+
+. Get a list of barcode scans and digital ledger balances
+
+
+SKU Validator
+
+. Get an SKU number
+. Compate it with the regular expression : r"^SKU-[0-9]*$"
