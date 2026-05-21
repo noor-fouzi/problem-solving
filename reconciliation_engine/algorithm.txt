@@ -3,6 +3,14 @@ Inventory Reconciliation Engine
 . Get a list of barcode scans and digital ledger balances
 
 
+Look-up Dictionary
+
+1. Get a tuple of ledger
+2. Unpack it into: SKU number and count
+3. Initiate an empty dictionary with a key SKU number,
+    and its value is the count as 'ledger_count'
+
+
 SKU Validator
 
 1. Get an SKU number
