@@ -32,7 +32,7 @@ def reconcile_inventory(physical_counts, ledger):
                 inventory_reconciliation.update(
                     {
                         sku_number: dict(
-                        name = "Unknown Product",
+                        name = count.get("name"),
                         difference = "MISSING_FROM_LEDGER"
                         )
                     }
