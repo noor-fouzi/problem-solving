@@ -1,0 +1,15 @@
+This was a tough one for me.
+It made me face a problem I've been ignoring for a long time;
+to compare to data structures, and capture the items that exist in 
+one of them and not the other!
+
+Also, I realized that I get paralyzed when I think of performance.
+Performance is important of course, but I need to move in any direction
+available first, then improve as I go.
+I need to work on this.
+
+Right! Today, I started with the code first. It's true that I wrote a 
+rough dratf of the solution, but I made alot of changes after I finished 
+coding.
+The reason is I wanted to visualize the solution, and coding was the 
+easiest method for me.
