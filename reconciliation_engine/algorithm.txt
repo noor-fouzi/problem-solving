@@ -1,13 +1,40 @@
 Inventory Reconciliation Engine
 
-. Get a list of barcode scans and digital ledger balances
+1. Get a list of barcode scans and digital ledger balances
+2. Initiate an empty dictionary to hold the inventory reconciliation
+3. Initiate an empty dictionary to  store the look-up dictionary
+4. Loop over the digital ledger balances:
+    4.1. Unpack each tuble
+    4.2. If its SKU number is valid:
+        4.2.1. Turn the tuple into a dictionary
+        4.2.2. Add the new dictionary to the look-up dictionary
+
+5. Loop over the barcode scans:
+    5.1. Get the SKU number of each scan
+    5.2. If the SKU number is valid:
+        5.2.1. If it exists in lookup:
+            5.2.1.1. Calculate its difference 
+            5.2.1.2. If the difference is not 0:
+                5.2.1.2.1. Initiate a dictionary with a key sku number, and its value:
+                    . The item's name from the barcode scan as name
+                    . The calculated difference
+        5.2.2. If it doesn't exist:
+            5.2.2.1. Initiate a dictionary with a key sku number, and its value:
+                . The item's name from the barcode scan as name
+                . Set "MISSING_FROM_LEDGER" as difference
+
+6. Loop over the lookup dictionary:
+    6.1. If the item is not in the final inventory reconciliation:
+        6.1.1. Initiate a dictionary with a key sku number, and its value:
+                . Set "Unknown Product" as name
+                . Set "MISSING_FROM_PHYSICAL" as difference
 
 
-Look-up Dictionary
+Tuple to Dictionary
 
 1. Get a tuple of ledger
 2. Unpack it into: SKU number and count
-3. Initiate an empty dictionary with a key SKU number,
+3. Initiate adictionary with a key SKU number,
     and its value is the count as 'ledger_count'
 
 
