@@ -14,9 +14,12 @@ def reconcile_inventory(physical_counts, ledger):
                 tpl_to_dct(ldgr)
             )
 
+    sku_numbers = set()
+
     for count in physical_counts:
         sku_number = count.get("sku")
         if validate_sku_number(sku_number):
+            sku_numbers.add(sku_number)
             if sku_number in lookup_dictionary:
                 difference = count.get("physical_count") - lookup_dictionary[sku_number].get("ledger_count")
                 if difference != 0:
@@ -39,7 +42,7 @@ def reconcile_inventory(physical_counts, ledger):
                 )
     
     for ldgr in lookup_dictionary:
-        if ldgr not in inventory_reconciliation:
+        if ldgr not in sku_numbers:
             inventory_reconciliation.update(
                     {
                         ldgr: dict(
