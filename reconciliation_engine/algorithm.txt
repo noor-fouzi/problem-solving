@@ -9,23 +9,25 @@ Inventory Reconciliation Engine
         4.2.1. Turn the tuple into a dictionary
         4.2.2. Add the new dictionary to the look-up dictionary
 
-5. Loop over the barcode scans:
-    5.1. Get the SKU number of each scan
-    5.2. If the SKU number is valid:
-        5.2.1. If it exists in lookup:
-            5.2.1.1. Calculate its difference 
-            5.2.1.2. If the difference is not 0:
-                5.2.1.2.1. Initiate a dictionary with a key sku number, and its value:
+5. Initiate an empty set to store the SKU numbers
+6. Loop over the barcode scans:
+    6.1. Get the SKU number of each scan
+    6.2. If the SKU number is valid:
+        6.2.1. Add the SKU number to the set
+        6.2.2. If it exists in lookup:
+            6.2.2.1. Calculate its difference 
+            6.2.2.2. If the difference is not 0:
+                6.2.2.2.1. Initiate a dictionary with a key sku number, and its value:
                     . The item's name from the barcode scan as name
                     . The calculated difference
-        5.2.2. If it doesn't exist:
-            5.2.2.1. Initiate a dictionary with a key sku number, and its value:
+        6.2.3. If it doesn't exist:
+            6.2.3.1. Initiate a dictionary with a key sku number, and its value:
                 . The item's name from the barcode scan as name
                 . Set "MISSING_FROM_LEDGER" as difference
 
-6. Loop over the lookup dictionary:
-    6.1. If the item is not in the final inventory reconciliation:
-        6.1.1. Initiate a dictionary with a key sku number, and its value:
+7. Loop over the lookup dictionary:
+    7.1. If the item is not in the SKU numbers set:
+        7.1.1. Initiate a dictionary with a key sku number, and its value:
                 . Set "Unknown Product" as name
                 . Set "MISSING_FROM_PHYSICAL" as difference
 
@@ -41,4 +43,4 @@ Tuple to Dictionary
 SKU Validator
 
 1. Get an SKU number
-2. Compate it with the regular expression : r"^SKU-[0-9]*$"
+2. Compate it with the regular expression : r"^SKU-[0-9]+$"
