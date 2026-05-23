@@ -8,11 +8,11 @@
                 . The number of the times the component has been executed as total_executed
                 . The number of successes as passed_count
                 . The number of fails as failed_count
-                . The success persentage as pass_persentage, and it's an integer calculated by:
+                . The success percentage as pass_persentage, and it's an integer calculated by:
                     (passed_count / total_executed) * 100
     3.3. Increase total_executed by 1
     3.4. If the component's status is "PASS":
         3.4.1. Increase passed_count by 1
     3.5. If the component's status is "FAIL":
         3.5.1. Increase failed_count by 1
-    3.6. pass_persentage is calculated by component's total_executed / component's passed_count * 100
+    3.6. pass_percentage is calculated by component's total_executed / component's passed_count * 100

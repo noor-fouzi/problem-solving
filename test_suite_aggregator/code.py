@@ -11,7 +11,7 @@ def aggregate_test_results(test_results):
                     total_executed = 0,
                     passed_count = 0,
                     failed_count = 0,
-                    pass_persentage = 0
+                    pass_percentage = 0
             )})
 
         aggregated_test_results[component]["total_executed"] += 1
@@ -25,7 +25,7 @@ def aggregate_test_results(test_results):
 
         total_executed = aggregated_test_results[component]["total_executed"]
         passed_count = aggregated_test_results[component]["passed_count"]
-        aggregated_test_results[component]["pass_persentage"] = int(passed_count / total_executed * 100)
+        aggregated_test_results[component]["pass_percentage"] = int(passed_count / total_executed * 100)
 
     return aggregated_test_results
 
