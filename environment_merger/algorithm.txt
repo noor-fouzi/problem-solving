@@ -1,0 +1,12 @@
+1. Get the base setup configuration dictionary
+2. Get a list of new configuration updates
+3. Loop over configuration updates:
+    3.1. If the update is a dictionary:
+        3.1.1. Get its key
+        3.1.2. If the key is in the whitelist - the set of accepted configurations:
+            3.1.2.1. Add the dictionary to the base setup configuration dictionary
+    3.2. If the update is a tuple:
+        3.2.1. Unpack the tuple into key and value
+        3.2.2. If the key is in the whitelist:
+            3.2.2.1. Initiate a dictionary of the tuple's values
+            3.2.2.2. Add the dictionary to the base setup configuration dictionary
