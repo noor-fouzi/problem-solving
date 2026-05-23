@@ -3,14 +3,14 @@ def environment_merger(base_config, config_updates):
     white_list = {"browser", "headless", "timeout_seconds", "retry_attempts", "reporter", "network_emulation", "experimental_mode"}
 
     for update in config_updates:
-        if type(update) == dict:
+        if isinstance(update, dict):
             key = update.get("key")
             if key in white_list:
                 base_config.update({
                     key: update.get("value")
                 })
 
-        elif type(update) == tuple:
+        elif isinstance(update, tuple):
             key, value = update
             print(key, value)
             if key in white_list:
