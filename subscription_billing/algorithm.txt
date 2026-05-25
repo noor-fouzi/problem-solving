@@ -18,9 +18,7 @@ Subscriptions Billing Engine
             3.2.2.3. If usage overage > 0:
                 3.2.2.3.1. Add the overage usage to the invoice_amount_usd
                 3.2.2.3.2. The monthly fees should be the tier's exact fees
-            3.2.2.4. Set invoice_monthly_usd to equal: fees rounded by 2 digits,
-                using the following string literal: f"{fees:.2f}"
-
+            3.2.2.4. Set invoice_monthly_usd to equal: fees rounded by 2 digits
     4. If the tier is not valid:
         4.1. Print an error message
         4.2. Skip it 
