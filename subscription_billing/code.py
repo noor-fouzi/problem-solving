@@ -27,19 +27,16 @@ def subscriptions_billing(customer_usage):
                     customer_id: dict(
                         name = usage.get("name"),
                         tier = tier,
-                        invoice_amount_usd = 0
+                        invoice_amount_usd = TIER_BASE_COSTS[tier]
                     )
                 })
             
-                usage_overage = usage.get("monthly_api_requests") - TIER_LIMITS[tier]["allowed_requests"]
-                fees = 0
-                if usage_overage <= 0:
-                    fees += TIER_BASE_COSTS[tier]
-                
-                else: 
-                    fees += TIER_BASE_COSTS[tier] + (usage_overage * TIER_LIMITS[tier]["overage_fee_per_request"])
+            usage_overage = usage.get("monthly_api_requests") - TIER_LIMITS[tier]["allowed_requests"]
 
-                billing_summary[customer_id]["invoice_amount_usd"] = f"{fees:.2f}"
+            if usage_overage > 0:
+                billing_summary[customer_id]["invoice_amount_usd"] += (usage_overage * TIER_LIMITS[tier]["overage_fee_per_request"])
+
+            billing_summary[customer_id]["invoice_amount_usd"] = round(billing_summary[customer_id]["invoice_amount_usd"], 2)
 
         else:
             print("Warning: Invalid tier!")
@@ -54,7 +51,10 @@ if __name__ == "__main__":
         {"customer_id": "C-802", "name": "DevCorp LLC", "tier": "Enterprise", "monthly_api_requests": 850000}, # Within allowance
         {"customer_id": "C-803", "name": "FinTech Solution", "tier": "Pro", "monthly_api_requests": 55000}, # Exceeds allowance!
         {"customer_id": "C-804", "name": "Charlie Smith", "tier": "Free", "monthly_api_requests": 450},    # Within allowance
-        {"customer_id": "C-805", "name": "Banned Hacker", "tier": "Premium_Plus", "monthly_api_requests": 999999} # Corrupt/Invalid Tier!
+        {"customer_id": "C-805", "name": "Banned Hacker", "tier": "Premium_Plus", "monthly_api_requests": 999999}, # Corrupt/Invalid Tier!
+        {"customer_id": "C-801", "name": "Alice Barker", "tier": "Free", "monthly_api_requests": 500},   # Within allowance
+        {"customer_id": "C-802", "name": "DevCorp LLC", "tier": "Enterprise", "monthly_api_requests": 1000000},
+        {"customer_id": "C-803", "name": "FinTech Solution", "tier": "Pro", "monthly_api_requests": 55000}
     ]
     
     print(subscriptions_billing(customer_usage))
