@@ -1,0 +1,12 @@
+Subscriptions Billing Engine
+
+1. Get a list of customers usage
+
+
+Dictionary to Set 
+
+1. Get a dictionary
+2. Initiate an empty set to store the whitelist
+3. Loop over it:
+    3.1. Get each key
+    3.2. Add it to the whitelist set
