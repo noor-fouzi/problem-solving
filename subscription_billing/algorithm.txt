@@ -1,6 +1,32 @@
 Subscriptions Billing Engine
 
 1. Get a list of customers usage
+2. Initiate an empty dictionary to store billing summary
+3. Loog over the customers usage list:
+    3.1. Get the tier of each customer
+    3.2. If tier is valid - within the whitelist:
+        3.2.1. Get the id of each customer
+        3.2.2. If there is no dictionary with a key of customer id:
+            3.2.2.1. Initiate a new dictionary with customer id as key,
+                and its value is a dictionary of:
+                    . Customer's name as name
+                    . Tier as tier
+                    . The price they should be paying at the end of the month as invoice_monthly_usd
+
+            3.2.2.2. Calculate the usage overage by:
+                number of used requests - tier's requests limit
+            3.2.2.3. Initiate a variable fees to hold the total monthly fees of the customer
+            3.2.2.4. If usage overage <= 0:
+                3.2.2.4.1. The monthly fees should be the tier's exact fees
+            3.2.2.5. If the usage overage is greater than 0:
+                3.2.2.5.1. The monthly fees is calculated by:
+                            tier's fees + (usage overage* tier's additional requests fees)
+            3.2.2.6. Set invoice_monthly_usd to equal: fees rounded by 2 digits,
+                using the following string literal: f"{fees:.2f}"
+
+    4. If the tier is not valid:
+        4.1. Print an error message
+        4.2. Skip it 
 
 
 Dictionary to Set 
