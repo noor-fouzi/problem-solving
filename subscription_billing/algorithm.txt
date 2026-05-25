@@ -11,17 +11,14 @@ Subscriptions Billing Engine
                 and its value is a dictionary of:
                     . Customer's name as name
                     . Tier as tier
-                    . The price they should be paying at the end of the month as invoice_monthly_usd
+                    . The tier fees they should be paying at the end of the month as invoice_monthly_usd
 
             3.2.2.2. Calculate the usage overage by:
                 number of used requests - tier's requests limit
-            3.2.2.3. Initiate a variable fees to hold the total monthly fees of the customer
-            3.2.2.4. If usage overage <= 0:
-                3.2.2.4.1. The monthly fees should be the tier's exact fees
-            3.2.2.5. If the usage overage is greater than 0:
-                3.2.2.5.1. The monthly fees is calculated by:
-                            tier's fees + (usage overage* tier's additional requests fees)
-            3.2.2.6. Set invoice_monthly_usd to equal: fees rounded by 2 digits,
+            3.2.2.3. If usage overage > 0:
+                3.2.2.3.1. Add the overage usage to the invoice_amount_usd
+                3.2.2.3.2. The monthly fees should be the tier's exact fees
+            3.2.2.4. Set invoice_monthly_usd to equal: fees rounded by 2 digits,
                 using the following string literal: f"{fees:.2f}"
 
     4. If the tier is not valid:
