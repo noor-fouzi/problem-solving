@@ -42,10 +42,17 @@ Write an analytical tracking engine that compiles a dictionary tracking **only t
 ### 🎯 Expected Target Output Layout
 ```Python
 {
-    "192.168.1.1": {
-        "offending_endpoint": "/login",
-        "total_hits": 6,
-        "allowed_limit": 5
-    }
+    "192.168.1.1": [
+        {
+            "offending_endpoint": "/login",
+            "total_hits": 6,
+            "allowed_limit": 5
+        },
+        {
+            "offending_endpoint": "/checkout",
+            "total_hits": 12,
+            "allowed_limit": 10
+        }
+    ]
 }
 ```
