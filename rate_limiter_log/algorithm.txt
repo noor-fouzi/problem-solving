@@ -16,15 +16,6 @@ Gateway Rate-Limiter Log
                         . The endpoint as offending_endpoint
                         . The count as the total_hits
                         . The limit as the allowed_limit                   
-                        
-
-
-IPs list
-
-1. Get a dictionary of gateway logs
-2. Initialize an empty list to hold the IPs
-3. Loop over the logs:
-    3.1. Add the IP of the log to the IPs list
 
 
 IP's Hit Endpoints
