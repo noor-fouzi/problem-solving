@@ -1,5 +1,4 @@
 from dct_to_set import dct_to_set
-from get_ips import get_ips
 from hit_count import endpoints_hit_count
 
 def rate_limiter(gateway_logs):
@@ -33,6 +32,9 @@ def rate_limiter(gateway_logs):
                         "total_hits": hits_number,
                         "allowed_limit": RATE_LIMITS[endpoint]
                     })
+                
+            else:
+                print(endpoint, " is an uknown endpoint!")
 
     return exceeded_limits
 
