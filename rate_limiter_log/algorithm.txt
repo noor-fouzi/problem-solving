@@ -12,3 +12,19 @@ IPs list
     3.1. Get the IP
     3.2. If the IP is not in the IPs list:
         3.2.1. Add it to the IPs list
+
+
+IP's Hit Endpoints
+
+1. Get a list of gateways 
+2. Initialize an empty dictionary to hold the hit endpoints counts - endpoints_count
+3. Loop over the logs:
+    3.1. Get the IP
+    3.2. Initialize an empty dictionary to hold the endpoints hit by the current IP,
+        with the IP as its key - hit_endpoints
+    3.3. If a dictionary with the key IP is not in the endpoints_count dictionary:
+        3.3.1. Add it
+    3.4. Get the endpoint 
+    3.5. If the endpoint is not in the hit_endpoints dictionary:
+        3.5.1. Add it as key, with initial value 0 as its count
+    3.6. Increase the endpoints count by 1
