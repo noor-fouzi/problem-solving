@@ -1,1 +1,3 @@
 That was a good refresher after Eid's rest.
+
+Also, I learned the importance of looking out for identation in Python.
