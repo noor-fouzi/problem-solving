@@ -1,0 +1,14 @@
+Gateway Rate-Limiter Log
+
+. Get a list of gateway logs
+. Initialize a dictionary to hold the IPs that exceeded an endpoint's limit
+
+
+IPs list
+
+1. Get a list of gateway logs
+2. Initialize an empty list to hold the IPs
+3. Loop over the logs:
+    3.1. Get the IP
+    3.2. If the IP is not in the IPs list:
+        3.2.1. Add it to the IPs list
