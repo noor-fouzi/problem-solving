@@ -1,7 +1,22 @@
 Gateway Rate-Limiter Log
 
-. Get a list of gateway logs
-. Initialize a dictionary to hold the IPs that exceeded an endpoint's limit
+1. Get a list of gateway logs
+2. Initialize a dictionary to hold the output - the IPs that exceeded an endpoint's limit - exceeded_limits
+3. Initialize a dictionary to hold the endpoints hit by an IP and the number of hit_endpoints - endpoints_count
+4. Initialize a set to hold the whitelist
+5. Loop over the endpoints_count:
+    5.1. Loop over the endpoints:
+        5.1.1. If the endpoint is within the whitelist:
+            5.1.1.1. Get its count
+            5.1.1.2. If the count exceeds the limit:
+                5.1.1.2.1. If the IP is not in the exceeded_limits dictionary:
+                    5.1.1.2.1.1. Initialize a dictionary with the IP as its key,
+                        and its value is an empty list
+                    5.1.1.2.1.2. Initialize a dictionary with the following structure:
+                        . The endpoint as offending_endpoint
+                        . The count as the total_hits
+                        . The limit as the allowed_limit                   
+                        
 
 
 IPs list
@@ -26,6 +41,7 @@ IP's Hit Endpoints
     3.5. If the endpoint is not in the hit_endpoints dictionary:
         3.5.1. Add it as key, with initial value 0 as its count
     3.6. Increase the endpoints count by 1
+
 
 Dictionary to Set
 1. Get a dictionary
