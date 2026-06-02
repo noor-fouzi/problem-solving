@@ -1,7 +1,6 @@
 class ShoppingCart:
 
     STORE_INVENTORY = {"laptop", "mouse", "keyboard", "monitor"}
-    customer_name = ""
 
     def __init__(self, customer_name):
 
