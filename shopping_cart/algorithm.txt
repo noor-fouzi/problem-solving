@@ -1,6 +1,7 @@
 Class Name: ShoppingCart
 
     Public customer_name : String
+    Public items : List
     Private STORE_INVENTORY : Set
 
     Public Constructor __init__ (self, customer_name)
