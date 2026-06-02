@@ -1,0 +1,3 @@
+That was a good refresher.
+
+Don't forget to use 'self' to assign the attributes to the object.
