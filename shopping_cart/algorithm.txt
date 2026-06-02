@@ -1,0 +1,22 @@
+Class Name: ShoppingCart
+
+    Public customer_name : String
+    Private STORE_INVENTORY : Set
+
+    Public Constructor __init__ (self, customer_name)
+        customer_name = customer_name
+        items = []
+
+    Public Method add_items(self, item_name, quantity, price_per_unit)
+        If the item is in STORE_INVENTORY:
+            Initialize a new tuple to hold the item
+            Add it to the items list
+        If it's not:
+            Print a warning message
+
+    Public Method get_total_bill(self)
+        Initialize a variable total = 0
+        Loop over the items list:  
+            Unpack each item to: name, quantity, price_per_unit
+            Add the result of (quantity * price_per_unit) to the total
+        Return the total
