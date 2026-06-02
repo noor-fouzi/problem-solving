@@ -10,7 +10,7 @@ class ShoppingCart:
     
     def add_item(self, item_name, quantity, price_per_unit):
 
-        if item_name in self.STORE_INVENTORY:
+        if item_name in ShoppingCart.STORE_INVENTORY:
             self.items.append((item_name, quantity, price_per_unit))
 
         else:
