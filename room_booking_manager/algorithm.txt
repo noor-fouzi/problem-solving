@@ -1,0 +1,37 @@
+Class Name : HotelRoom
+    Public room_number : Integer
+    Public room_type : String
+    Public max_capacity : Integer
+    Public is_occupied : Boolean
+    Public current_guests : Integer
+
+    Public Constructor __init__(self, room_number, room_type, max_capacity)
+        room_number = room_number
+        room_type = room_type
+        max_capacity = max_capacity
+        is_occupied = False
+        current_guests = 0
+
+    Public Method check_in(self, guest_count)
+        If is_occupied is True:
+            Print a warning message
+        
+        If is_occupied is False:
+            If guest_count < max_capacity:
+                Print a warning message
+            If guest_count >= max_capacity:
+                Set is_occupied = True
+                Set current_guests = guest_count
+
+    Public Method check_out(self, nights_stayed, price_per_night)
+        Initialize a variable cost
+
+        If is_occupied is False:
+            Print a warning message
+            cost = 0
+        
+        If is_occupied is True:
+            Set is_occupied = False
+            Set current_guests = 0
+            Calculate cost =  calculated as nights_stayed * price_per_night,
+                rounded to 2 digits
