@@ -1,0 +1,48 @@
+Class Name: LogisticsDrone
+    Public drone_id : String
+    Public max_weight_capacity : Float
+    Public battery_level : Float
+    Public current_payload_weight : Float
+    Public status : String
+
+    Public Constructor __init__(drone_id, max_weight_capacity):
+        drone_id = drone_id
+        max_weight_capacity = max_weight_capacity
+        battery_level = 100.0
+        current_payload_weight = 0.0
+        status = "IDLE"
+
+    Public Method load_payload(weight):
+        If status is not IDLE:
+            print a warning message
+
+        If status is IDLE:
+
+            If weight > max_weight_capacity:
+                print a warning message
+
+            If weight <= max_weight_capacity:
+                status = LOADED
+                current_payload_weight = weight
+
+    Public Method execute_flight(distance_km):
+        Initialize a varible required_power, which is calculated by:
+            (distance_km * 1.5) + (current_payload_weight * 0.5)
+        If status is not LOADED:
+            print a warning message
+
+        If status is LOADED:
+            If required_power > battery_level:
+                print a warning message
+
+            If required_power <= battery_level:
+                Set battery_level = battery_level - required_power
+                Set status = IN_FLIGHT  
+
+    Public Method complete_delivery():
+        IF status is not IN_FLIGHT:
+            print a warning message
+        
+        If status is IN_FLIGHT:
+            Set current_payload_weight = 0.0
+            Set status = IDLE
