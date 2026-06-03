@@ -12,38 +12,37 @@ class LogisticsDrone:
     def load_payload(self, weight):
         if self.status != "IDLE":
             print(f"Error: Drone {self.drone_id} is not ready for loading!")
+            return
 
-        else:
-            if weight > self.max_weight_capacity:
-                print("Error: Payload exceeds maximum weight capacity!")
+        if weight > self.max_weight_capacity:
+            print("Error: Payload exceeds maximum weight capacity!")
+            return
 
-            else:
-                self.status = "LOADED"
-                self.current_payload_weight = weight
+        self.status = "LOADED"
+        self.current_payload_weight = weight
 
     def execute_flight(self, distance_km):
         required_power = (distance_km * 1.5) + (self.current_payload_weight * 0.5)
 
         if self.status != "LOADED":
             print("Error: Drone must be loaded before flight execution!")
-
-        else:
-            if required_power > self.battery_level:
-                print("Aborting Flight: Insufficient battery power required!")
-
-            else:
-                self.status = "IN_FLIGHT"
-                self.battery_level -= required_power
+            return 
+        
+        if required_power > self.battery_level:
+            print("Aborting Flight: Insufficient battery power required!")
+            return
+        
+        self.status = "IN_FLIGHT"
+        self.battery_level -= required_power
 
     def complete_delivery(self):
         if self.status != "IN_FLIGHT":
             print("Error: No active delivery in progress!")
+            return
 
-        else:
-            self.current_payload_weight = 0.0
-            self.status = "IDLE"
-            print(f"Delivery completed. Drone {self.drone_id} is now IDLE.")
-
+        self.current_payload_weight = 0.0
+        self.status = "IDLE"
+        print(f"Delivery completed. Drone {self.drone_id} is now IDLE.")
         return round(self.battery_level, 1)
 
 
