@@ -1,0 +1,33 @@
+Class Name : Vehicle
+    Public vehicle_id : String
+    Public current_location : String
+    Public is_available : Boolean 
+
+    Public Constructor __init(vehicle_id, current_location):
+        vehicle_id = vehicle_id
+        current_location = current_location
+        is_available = True
+
+
+Class Name : Dispatcher
+    Public region_name : String
+    Public monitored_vehicles: List of Vehicles
+
+    Public Constructor __init__(region_name):
+        region_name = region_name
+        monitored_vehicles = []
+
+    Public register_vehicle(vehicle_instance):
+        Add vehicle_instance to monitored_vehicles
+
+    Public match_ride(pickup_city, destination_city):
+
+        Loop over monitored_vehicles:
+            If a vehicle is available and its current_location is the pickup_city:
+                Print a confirming message
+                Set the vehicle's availability to False
+                Change its current_location to destination_city
+                Stop the loop
+
+            If there is no match:
+                Print a warning message
