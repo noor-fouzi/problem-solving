@@ -29,9 +29,7 @@ class Dispatcher:
                 vehicle.current_location = destination_city
                 return
             
-            else:
-                print("There are no available vehicles.")
-                return
+        print("There are no available vehicles.")
             
 
 if __name__ == "__main__":
